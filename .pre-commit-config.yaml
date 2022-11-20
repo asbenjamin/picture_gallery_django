@@ -59,7 +59,7 @@ repos:
     hooks:
       - id: django-tests
         name: django-tests
-        entry: ./manage.py test
+        entry: ./manage.py test --settings=config.settings.test
         language: system
         types: [python]
         pass_filenames: false

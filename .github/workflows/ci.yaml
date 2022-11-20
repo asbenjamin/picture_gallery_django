@@ -3,12 +3,6 @@ name: CI Workflow
 on: [pull_request, push] # activates the workflow when there is a push or pull request in the repo
 
 env:
-  NAME: 'database'
-  PGUSER: 'username'
-  PGPASSWORD: 'password'
-  PGHOST: 'localhost'
-  PGPORT: '5432'
-
   DEBUG: 0
 
   SECRET_KEY: 'secretkey'
@@ -28,4 +22,4 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Tests
-        run: python manage.py test
+        run: python manage.py test --settings=config.settings.test
