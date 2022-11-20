@@ -2,6 +2,21 @@ name: CI Workflow
 
 on: [pull_request, push] # activates the workflow when there is a push or pull request in the repo
 
+env:
+  NAME: 'database'
+  PGUSER: 'username'
+  PGPASSWORD: 'password'
+  PGHOST: 'localhost'
+  PGPORT: '5432'
+
+  DEBUG: 0
+
+  SECRET_KEY: 'secretkey'
+
+  cloud_name: "cloudname"
+  api_key: "apikey"
+  api_secret: "apisecret"
+
 jobs:
   test_project:
     runs-on: ubuntu-latest # operating system your code will run on
