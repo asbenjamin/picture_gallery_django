@@ -12,7 +12,7 @@ class UploadViewSet(viewsets.ModelViewSet):
     serializer_class = UploadSerializer
 
     def get_queryset(self):
-        return Photo.objects.all()
+        return Photo.objects.filter(owner=self.request.user)
 
     def create(self, request):
         picture = request.FILES.get("picture")
